@@ -12,7 +12,7 @@ batch start
 board_name SPEEDYBEEF405V4
 manufacturer_id SPBE
 
-# name: long_runner
+# name: long runner
 
 # feature
 feature GPS
@@ -45,18 +45,19 @@ vtxtable powerlabels 25 400 800 MAX
 set dyn_notch_count = 1
 set dyn_notch_q = 500
 set acc_calibration = -15,14,19,1
+set blackbox_sample_rate = 1/16
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300
-set failsafe_off_delay = 200
-set failsafe_procedure = GPS-RESCUE
-set bat_capacity = 5000
+set bat_capacity = 4200
+set vbat_max_cell_voltage = 420
 set vbat_min_cell_voltage = 300
 set vbat_warning_cell_voltage = 330
 set force_battery_cell_count = 6
 set gps_sbas_mode = AUTO
-set gps_auto_baud = ON
 set gps_ublox_use_galileo = ON
 set gps_set_home_point_once = ON
+set gps_rescue_min_sats = 5
+set gps_rescue_allow_arming_without_fix = ON
 set deadband = 3
 set yaw_deadband = 2
 set pid_process_denom = 2
@@ -130,13 +131,13 @@ set osd_displayport_device = AUTO
 set osd_menu_background = GRAY
 set osd_canvas_width = 30
 set osd_canvas_height = 16
-set vtx_band = 2
-set vtx_channel = 2
-set vtx_power = 3
+set vtx_band = 4
+set vtx_channel = 4
+set vtx_power = 4
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
-set vtx_freq = 5752
+set vtx_freq = 5800
 set vcd_video_system = PAL
-set craft_name = long_runner
+set craft_name = long runner
 set pilot_name = cityofships
 
 profile 0
