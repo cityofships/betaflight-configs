@@ -3,9 +3,8 @@
 # diff
 
 # version
-# Betaflight / STM32F405 (S405) 4.4.3 Nov 14 2023 / 16:24:54 (738127e7e) MSP API: 1.45
-
-# config: YES
+# Betaflight / STM32F405 (S405) 4.5.0 Apr 28 2024 / 05:22:19 (c155f5830) MSP API: 1.46
+# config rev: 3068e6e
 
 # start the command batch
 batch start
@@ -17,11 +16,12 @@ manufacturer_id SPBE
 
 # feature
 feature GPS
+feature TELEMETRY
+feature OSD
 
 # serial
 serial 0 2048 115200 57600 0 115200
-serial 4 0 115200 57600 0 115200
-serial 5 2 115200 115200 0 115200
+serial 5 2 115200 57600 0 115200
 
 # aux
 aux 0 0 0 1900 2100 0 0
@@ -44,7 +44,7 @@ vtxtable powerlabels 25 400 800 MAX
 # master
 set dyn_notch_count = 1
 set dyn_notch_q = 500
-set acc_calibration = 3,-6,8,1
+set acc_calibration = -15,14,19,1
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300
 set failsafe_off_delay = 200
@@ -81,6 +81,7 @@ set vtx_channel = 2
 set vtx_power = 3
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_freq = 5752
+set vcd_video_system = PAL
 set craft_name = long_runner
 set pilot_name = cityofships
 
@@ -89,7 +90,7 @@ profile 0
 # profile 0
 set dyn_idle_min_rpm = 21
 
-rateprofile 2
+rateprofile 0
 
 # end the command batch
 batch end
